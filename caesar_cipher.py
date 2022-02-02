@@ -9,7 +9,9 @@ print(r"""
 """)
 #caesar cipher encryption
 alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+print("enter alphabets only !")
 encode = input("enter txt to be encrypted: ").replace(" ","").casefold()
+assert encode.isalpha(),"/* only alphabets allowed */"
 shift = int(input("how many character would you like to shift: "))
 encrypted_r =""
 encrypted_l =""
@@ -22,7 +24,8 @@ print("{} when shifted {} character form right: {}".format(encode,shift,encrypte
 print("{} when shifted {} character form left: {}".format(encode,shift,encrypted_l))
 
 #caesar cipher decryption
-decode = input("enter caesar cipher encoded text: ").replace(" ","").casefold() 
+decode = input("enter caesar cipher encoded text: ").replace(" ","").casefold()
+assert decode.isalpha(),"/* only alphabets allowed */"
 Shift = int(input("how may characters where shifted: "))
 print("if shift was from left enter : l")
 print("if shift was from right enter : r")
@@ -38,12 +41,3 @@ if left_or_right == "l":
   print("{} when shifted {} character form left: {}".format(decode,shift,decrypted_l))
 elif left_or_right== "r":
   print("{} when shifted {} character form right: {}".format(decode,shift,decrypted_r))
-
-
-
-    
-
-    
-
-
-
